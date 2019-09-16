@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+
+<!-- https://stackoverflow.com/questions/47136249/ionic-button-color-change-for-specific-button/47136557?noredirect=1#comment81222432_47136557 -->
+
+  <button id="1" #first ion-button color="dark" (click)="btnActivate(first)">text</button>
+  <button id="1" #second ion-button color="dark" (click)="btnActivate(second)">text</button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let A of Animales ;let i = index">
+        <ion-card [color]="buttonColor[i]" (click)="someAction(i)" tappable>
+          <ion-card-content>
+            <ion-title>{{A.nombre}}</ion-title>
+            <div><img src="{{A.imagen}}"></div>
+            <p>{{A.nombre}} {{A.raza}}
+              </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
