@@ -28,12 +28,7 @@ export class HomePage {
 
   }
   
-  btnActivate(ionicButton) {
-    if(ionicButton._color === 'dark')
-      ionicButton.color =  'primary';
-    else
-      ionicButton.color = 'dark';
-  }
+
 
   isSelected(event) {
     console.log(event);
@@ -43,6 +38,7 @@ export class HomePage {
 
   someAction(i)
   {
-    console.log(i)
+    var item = this.buttonColor[Math.floor(Math.random()*this.buttonColor.length)];
+    this.buttonColor[i]=this.buttonColor[item];
   }
 }
